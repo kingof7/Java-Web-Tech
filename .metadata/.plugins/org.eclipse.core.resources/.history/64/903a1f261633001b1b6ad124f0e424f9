@@ -1,0 +1,13 @@
+package com.spring.ex04;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.FileSystemResource;
+
+import com.spring.ex03.MemberService;
+
+public class LazyTest {
+	BeanFactory factory = new XmlBeanFactory(new FileSystemResource("member.xml"));
+	MemberService service = (MemberService) factory.getBean("memberService");
+
+}

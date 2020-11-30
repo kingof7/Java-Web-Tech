@@ -1,0 +1,26 @@
+package com.spring.ex02;
+
+import com.spring.ex01.PersonService;
+
+public class PersonServiceImpl implements PersonService {
+	
+	private String name;
+	private int age;
+	
+	public PersonServiceImple(String name) {
+		this.name = name;
+	}
+	
+	public PersonServiceImple(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	@Override
+	public void sayHello() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

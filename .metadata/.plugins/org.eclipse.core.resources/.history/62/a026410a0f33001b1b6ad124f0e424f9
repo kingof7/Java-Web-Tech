@@ -1,0 +1,16 @@
+package com.spring.ex02;
+
+public class PersonServiceImpl implements PersonService {
+	
+	private String name;
+	private int age;
+	
+	public void PersonServiceImple(String name) {
+		this.name = name;
+	}
+	
+	public void PersonServiceImple(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+}

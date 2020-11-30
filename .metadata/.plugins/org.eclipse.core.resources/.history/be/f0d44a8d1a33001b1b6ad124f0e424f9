@@ -1,0 +1,11 @@
+package com.spring.ex01;
+
+public class LoggingAdvice {
+	
+	public Object invoke(MethodInvocation invocation) throws Throwable {
+		System.out.println("[메서드 호출 전 : LoggingAdvice");
+		System.out.println(invocation.getMethod() + "메서드 호출 전");
+		
+	}
+
+}
