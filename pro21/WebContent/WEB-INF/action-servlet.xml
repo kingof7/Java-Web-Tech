@@ -50,8 +50,10 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		  class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
 		<property name="mappings">
 			<props>
-				<prop key="/test/login.do">login</prop> <!-- prop은 메서드 호출:UserController 안에 있는 login 메서드 -->
-				<!-- <prop key="/test/memberInfo.do">memberInfo</prop>  -->
+				<prop key="/test/login.do">login</prop> <!-- prop은 메서드/클래스 호출:UserController 안에 있는 login 메서드 -->
+				<prop key="/test/memberInfo.do">memberInfo</prop>
+				<prop key="/test/loginForm.do">loginForm</prop>
+				
 			</props>
 		</property>
 	</bean>
