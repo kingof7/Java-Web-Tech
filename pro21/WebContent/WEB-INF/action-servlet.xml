@@ -12,7 +12,7 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
-<bean id="simpleUrlController" class="com.spring.ex01.SimpleUrlController"/>
+<!-- <bean id="simpleUrlController" class="com.spring.ex01.SimpleUrlController"/>
 
 <bean id="urlMapping"
   class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
@@ -21,9 +21,9 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
       <prop key="/test/index.do">simpleUrlController</prop>
     </props>
   </property>  
-</bean>
+</bean> -->
  
- 	<!-- <bean id="viewResolver"
+    <bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
@@ -42,7 +42,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<bean id="userController" class="com.spring.ex02.UserController">
 		<property name="methodNameResolver">
-			<ref local="userMethodNameResolver" />
+			<ref local="userMethodNameResolver" /> <!-- local은 빈 지정 -->
 		</property>
 	</bean>
 
@@ -50,10 +50,10 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		  class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
 		<property name="mappings">
 			<props>
-				<prop key="/test/login.do">login</prop>
-				<prop key="/test/memberInfo.do">memberInfo</prop> 
+				<prop key="/test/login.do">login</prop> <!-- prop은 메서드 호출:UserController 안에 있는 login 메서드 -->
+				<!-- <prop key="/test/memberInfo.do">memberInfo</prop>  -->
 			</props>
 		</property>
-	</bean> -->
+	</bean>
 
 </beans>
