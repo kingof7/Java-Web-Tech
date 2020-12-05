@@ -23,18 +23,17 @@
       <td><b>이메일</b></td>
       <td><b>가입일</b></td>
    </tr>
-   
- <c:forEach var="member" items="${membersList}" >     
-   <tr align="center">
-      <td>${member.id}</td>
-      <td>${member.pwd}</td>
-      <td>${member.name}</td>
-      <td>${member.email}</td>
-      <td>${member.joinDate}</td>
-      
+         
+    <tr align="center">
+      <td>${id}</td>
+      <td>${pwd}</td>
+      <td>${name}</td>
+      <td>${email}</td>
+      <td>${joinDate}</td>      
     </tr>
-  </c:forEach>   
+ 
 </table>
+<a  href="${contextPath}/member/listMembers.do"><h1 style="text-align:center">회원목록</h1></a>
 <a  href="${contextPath}/member/memberForm.do"><h1 style="text-align:center">회원가입</h1></a>
 </body>
 </html>

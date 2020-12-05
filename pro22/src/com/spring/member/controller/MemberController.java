@@ -9,5 +9,5 @@ import com.spring.member.vo.MemberVO;
 
 public interface MemberController {
 	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception;
-	public ModelAndView addMember(HttpServletRequest request, HttpServletResponse response, MemberVO memberVO) throws Exception;
+	public ModelAndView addMember(HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

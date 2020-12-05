@@ -40,7 +40,9 @@
 	    </tr>
 	    <tr>
 	       <td width="200"><p>&nbsp;</p></td>
-	       <td width="400"><input type="submit" value="가입하기"><input type="reset" value="다시입력"></td>
+	       <td width="400">
+	       <input type="submit" value="가입하기">
+	       <input type="reset" value="다시입력"></td>
 	    </tr>
 	</table>
 	</form>
