@@ -21,7 +21,7 @@
    </resultMap> 
 
 
-	<select id="selectAllMemberList" resultMap="memResult">
+	<select id="selectAllMemberList" resultMap="memResult"> <!-- 위에 memResult에 셋팅 -->
       <![CDATA[
          select * from t_member	order by joinDate desc	 	
       ]]>
