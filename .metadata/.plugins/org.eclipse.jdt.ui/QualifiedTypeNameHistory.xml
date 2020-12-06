@@ -3,6 +3,11 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.BeanFactory"/>
     <fullyQualifiedTypeName name="com.spring.ex01.PersonService"/>
     <fullyQualifiedTypeName name="org.aopalliance.intercept.MethodInterceptor"/>
-    <fullyQualifiedTypeName name="com.spring.member.dao.MemberDAO"/>
     <fullyQualifiedTypeName name="com.spring.member.vo.MemberVO"/>
+    <fullyQualifiedTypeName name="com.spring.member.dao.MemberDAOImpl"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.spring.member.dao.MemberDAO"/>
 </qualifiedTypeNameHistroy>
