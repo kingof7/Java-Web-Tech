@@ -34,7 +34,7 @@
     ]]>
 	</select>
 	
-	<select id="selectPwd" resultType="int" >
+	<select id="selectPwd" resultType="String" >
 	  <![CDATA[ 
 	    select pwd from t_member 
 	    where id = 'hong'
@@ -45,11 +45,11 @@
       <![CDATA[
          select * from t_member
          where
-         id=#{id}			
+         id = #{id}			
       ]]>
 	 </select>	
 	
-	<select id="selectMemberByPwd" resultMap="memResult"  parameterType="int" >
+	<select id="selectMemberByPwd" resultMap="memResult"  parameterType="String" > <!-- 비밀번호는 중복가능하므로 resultMap="memResult" -->
       <![CDATA[
          select * from t_member
          where
