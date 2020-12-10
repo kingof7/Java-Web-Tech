@@ -2,21 +2,6 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=java
 
 ### Java ###
-
-### tomcat, 기타 파일들 ###
-tomcat-users.xml
-server.xml
-context.xml
-catalina.properties
-catalina.policy
-variablesAndContainers.dat
-savedIndexNames.txt
-externalLibsTimeStamps
-workbench.xmi
-launchConfigurationHistory.xml
-org.eclipse.wst.xml.ui.prefs
-org.eclipse.core.resources
-
 # Compiled class file
 *.class
 
@@ -42,4 +27,3 @@ org.eclipse.core.resources
 hs_err_pid*
 
 # End of https://www.toptal.com/developers/gitignore/api/java
-/.metadata/
