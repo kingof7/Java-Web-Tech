@@ -90,9 +90,15 @@ public class MemberServlet extends HttpServlet {
 			dao.deleteMember(id);
 						
 			nextPage = "/mem4.do?action=listMembers"; //redirect 페이지					
-		}
-		
-		
+		}else if(action.equals("searchMember")) {
+			String name = request.getParameter("name");
+			String email = request.getParameter("email");			
+			memberVO.setName(name);
+			memberVO.setEmail(email);
+			List<MemberVO> membersList = dao.searchMember(memberVO);
+			request.setAttribute("membersList", membersList);
+			nextPage = "test03/listMembers.jsp"; //redirect 페이지					
+		}			
 		
 		RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 		dispatch.forward(request, response);	

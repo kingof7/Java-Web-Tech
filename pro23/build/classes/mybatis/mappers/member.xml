@@ -106,19 +106,19 @@
       order by joinDate desc
   </select>
   
- <!--  
+   
    <sql id="a">
     <![CDATA[
       select * from t_member
      ]]> 
-   </sql>  -->  
+   </sql> 
   
-<!--    
-  <select id="searchMember" parameterType="memberVO" resultMap="memResult">
-	     <include refid="a" /> 
+    
+  <select id="searchMember2" parameterType="memberVO" resultMap="memResult">
+	   <include refid="a" /> 
 	   <![CDATA[
          select * from t_member 
-      ]]>
+       ]]>
 	  
        <where>
 		  <choose>
@@ -134,10 +134,10 @@
 	      </choose>
        </where>
        order by joinDate desc
-   </select> -->
+   </select>
    
    <select id="foreachSelect" resultMap="memResult" parameterType="java.util.Map">
-      <!-- <include refid="a" /> -->
+      <include refid="a" /> <!-- 공통 SQL 재사용 -->
       <![CDATA[
         select * from t_member 
           
@@ -150,7 +150,7 @@
       order by joinDate desc
    </select>
    
-   <insert id="foreachInsert"  parameterType="java.util.Map">
+   <insert id="foreachInsert"  parameterType="java.util.Map"> <!-- oracle 방법 // MySQL은 또 다르다-->
       <foreach item="item"  collection="list"   open="INSERT ALL" separator=" " close="SELECT * FROM DUAL" >
           INTO  t_member(id, pwd, name, email)
           VALUES  (#{item.id},
@@ -160,7 +160,20 @@
       </foreach>
    </insert>
    
-   <!-- 
+   <!-- MySQL 방법
+   <insert id="foreachInsert" parameterType="java.util.Map">
+   	INSERT INTO t_member(id, pwd, name, email)
+   	VALUES
+   	<foreach item="item"	collection="list"	>
+   		(#{item.id},
+   		 #{item.pwd},
+   		 #{item.name},
+   		 #{item.email})
+   	</foreach>
+   </insert>
+     -->
+   
+   <!-- Error 발생
     <select id="selectLike" resultMap="memResult"  parameterType="String" >
       <![CDATA[
          select * from t_member

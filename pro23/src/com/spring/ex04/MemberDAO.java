@@ -104,6 +104,13 @@ public class MemberDAO {
 		return result;
 		
 	}
+
+	public List<MemberVO> searchMember(MemberVO memberVO) {
+		sqlMapper = getInstance();
+		SqlSession session = sqlMapper.openSession();			
+		List list = session.selectList("mapper.member.searchMember", memberVO);
+		return list;
+	}
 	
 //	 public List<HashMap<String, String>> selectAllMemberList() { 
 //		sqlMapper = getInstance(); 
