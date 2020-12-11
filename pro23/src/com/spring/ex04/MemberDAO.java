@@ -105,10 +105,33 @@ public class MemberDAO {
 		
 	}
 
-	public List<MemberVO> searchMember(MemberVO memberVO) {
-		sqlMapper = getInstance();
+	public List<MemberVO> searchMember(MemberVO memberVO) { // 여기 Parameter가 MemberVO니까 member.xml에도 ParameterType이 MemberVO가 되는 것
+		sqlMapper = getInstance();												 // 왜냐하면 이 Method가 DB에 접근하기 때문
 		SqlSession session = sqlMapper.openSession();			
 		List list = session.selectList("mapper.member.searchMember", memberVO);
+		return list;
+	}
+
+	public List<MemberVO> foreachSelect(List<String> nameList) {
+		sqlMapper = getInstance();												 // 왜냐하면 이 Method가 DB에 접근하기 때문
+		SqlSession session = sqlMapper.openSession();			
+		List list = session.selectList("mapper.member.foreachSelect", nameList);
+		return list;
+	}
+
+	public int foreachInsert(List memList) {
+		sqlMapper = getInstance();
+		SqlSession session = sqlMapper.openSession();
+		int result = 0;
+		result = session.insert("mapper.member.foreachInsert", memList);
+		session.commit();
+		return result;
+	}
+
+	public List<MemberVO> selectLike(String name) {
+		sqlMapper = getInstance();
+		SqlSession session = sqlMapper.openSession();
+		List list = session.selectList("mapper.member.selectLike", name);
 		return list;
 	}
 	

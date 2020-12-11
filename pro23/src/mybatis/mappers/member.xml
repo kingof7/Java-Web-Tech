@@ -91,7 +91,7 @@
 	
 	
 	<!-- 동적 SQL문 -->
-  <select id="searchMember" parameterType="memberVO" resultMap="memResult">
+ <!--  <select id="searchMember" parameterType="memberVO" resultMap="memResult">
       <![CDATA[
           select * from t_member
       ]]>
@@ -104,7 +104,7 @@
          </if>
       </where>
       order by joinDate desc
-  </select>
+  </select> -->
   
    
    <sql id="a">
@@ -114,11 +114,11 @@
    </sql> 
   
     
-  <select id="searchMember2" parameterType="memberVO" resultMap="memResult">
-	   <include refid="a" /> 
-	   <![CDATA[
+  <select id="searchMember" parameterType="memberVO" resultMap="memResult">
+	   <include refid ="a"/>
+	 <!--   <![CDATA[
          select * from t_member 
-       ]]>
+       ]]> -->
 	  
        <where>
 		  <choose>
@@ -137,11 +137,12 @@
    </select>
    
    <select id="foreachSelect" resultMap="memResult" parameterType="java.util.Map">
-      <include refid="a" /> <!-- 공통 SQL 재사용 -->
-      <![CDATA[
+       <!-- 공통 SQL 재사용 -->
+       <include refid="a" />
+    <!--   <![CDATA[
         select * from t_member 
           
-      ]]>
+      ]]> -->
       
       where name in
       <foreach item="item" collection="list" open="(" separator="," close=")" >
