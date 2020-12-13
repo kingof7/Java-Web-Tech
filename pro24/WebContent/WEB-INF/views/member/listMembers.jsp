@@ -16,8 +16,12 @@
 <title>회원 정보 출력창</title>
 </head>
 <body>
-
-${deleteMessage}
+<script type="text/javascript">
+	var message = "";
+	if (message == ${deleteMessage}){
+		alert('회원이 삭제되었습니다.');
+	}
+</script>
 <table border="1"  align="center"  width="80%">
     <tr align="center"   bgcolor="lightgreen">
       <td ><b>아이디</b></td>
@@ -26,6 +30,7 @@ ${deleteMessage}
       <td><b>이메일</b></td>
       <td><b>가입일</b></td>
       <td><b>삭제</b></td>
+      <td><b>수정</b></td>
    </tr>
    
  <c:forEach var="member" items="${membersList}" >     
@@ -36,6 +41,7 @@ ${deleteMessage}
       <td>${member.email}</td>
       <td>${member.joinDate}</td>
       <td><a href="${contextPath}/member/removeMember.do?id=${member.id }">삭제하기</a></td>
+      <td><a href="${contextPath}/member/modMemberForm.do?id=${member.id }">수정하기</a></td>
     </tr>
   </c:forEach>   
 </table>

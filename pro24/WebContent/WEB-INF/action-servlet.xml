@@ -35,7 +35,9 @@
           <prop key="/member/listMembers.do" >listMembers</prop>
           <prop key="/member/addMember.do" >addMember</prop>
           <prop key="/member/removeMember.do">removeMember</prop>
+          <prop key="/member/modMember.do">modMember</prop>
           <prop key="/member/memberForm.do" >form</prop>
+          <prop key="/member/modMemberForm.do" >form</prop>
        </props>
       </property>
    </bean>

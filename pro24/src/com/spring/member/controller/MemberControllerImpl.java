@@ -28,7 +28,8 @@ public class MemberControllerImpl extends MultiActionController implements Membe
 		mav.addObject("membersList", membersList);
 		return mav;
 	}
-
+	
+	// 회원 추가
 	@Override
 	public ModelAndView addMember(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
@@ -50,26 +51,47 @@ public class MemberControllerImpl extends MultiActionController implements Membe
 		return mav;
 	}
 	
+	//회원 삭제
 	@Override
 	public ModelAndView removeMember(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		request.setCharacterEncoding("utf-8");
 		String id=request.getParameter("id");
+		response.setContentType("text/html; charset=UTF-8");		
 		memberService.removeMember(id);
-		response.setContentType("text/html; charset=UTF-8");
-
 		ModelAndView mav = new ModelAndView("redirect:/member/listMembers.do");
-		mav.addObject("deleteMessage","${member.name} 제거");		
+		//mav.addObject("deleteMessage","${member.id} 제거");		
 		return mav;
 	}
 	
+	//form: 회원가입, 수정
 	public ModelAndView form(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String viewName = getViewName(request);
+		String viewName = getViewName(request); //modMemberForm (view이름)
 		ModelAndView mav = new ModelAndView();
+		if(viewName.equals("/modMemberForm")) { //회원수정
+			String id = request.getParameter("id");
+			MemberVO memberVO = memberService.findMember(id);
+			mav.addObject("member", memberVO); //binding
+		}
 		mav.setViewName(viewName);
 		return mav;
 	}
 	
-	
+	//회원정보 수정
+	@Override
+	public ModelAndView modMember(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		MemberVO memberVO = new MemberVO();
+		bind(request, memberVO); // jsp에서 넘어온 hidden값이 첫 속성에 바인딩되기때문에 2개이상이넘어오면 아래줄처럼 따로 셋팅
+		memberVO.setId(request.getParameter("id")); //jsp에서 hidden으로 따로넘겨준것을 셋팅, bind는 hidden값을 하나로 셋팅해버림
+		
+		System.out.println(memberVO.getId());
+		int result = 0;
+		result = memberService.updateMember(memberVO);
+		System.out.println("result: " + result);
+		ModelAndView mav = new ModelAndView("redirect:/member/listMembers.do");
+						
+		return mav;
+	}	
 
 	private String getViewName(HttpServletRequest request) throws Exception {
 		String contextPath = request.getContextPath();
@@ -99,7 +121,9 @@ public class MemberControllerImpl extends MultiActionController implements Membe
 		if (fileName.lastIndexOf("/") != -1) {
 			fileName = fileName.substring(fileName.lastIndexOf("/"), fileName.length());
 		}
-		return fileName;
-	}	
+		return fileName; // /viewName 으로 반환
+	}
+
+	
 
 }

@@ -32,4 +32,15 @@ public class MemberServiceImpl  implements MemberService{
 		   
 	      return memberDAO.deleteMember(id);
 	   }
+
+	@Override
+	public MemberVO findMember(String id) throws DataAccessException {
+		MemberVO memberVO = memberDAO.selectMember(id);
+		return memberVO;
+	}
+
+	@Override
+	public int updateMember(MemberVO memberVO) throws DataAccessException {
+		return memberDAO.modMember(memberVO);
+	}
 }

@@ -71,10 +71,9 @@
 		<item value="org.springframework.ide.eclipse.xml.namespaces.feature:4.8.1.202010230733"/>
 	</list>
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>
 	<section name="SaveAsDialogSettings">
@@ -90,6 +89,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\eclipse-workspace\pro23"/>
 			<item value="C:\Users\SSONGBAGANG\Downloads\jejusari-master"/>
 			<item value="E:\sts\sts-workspace\pro21"/>
 			<item value="C:\Users\SSONGBAGANG\Downloads\자바 웹을 다루는 기술\pro21"/>
