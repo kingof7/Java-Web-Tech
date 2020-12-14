@@ -17,4 +17,6 @@
     <fullyQualifiedTypeName name="com.spring.member.vo.MemberVO"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
 </qualifiedTypeNameHistroy>
