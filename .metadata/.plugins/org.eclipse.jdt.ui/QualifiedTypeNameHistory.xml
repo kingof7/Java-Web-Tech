@@ -9,7 +9,6 @@
     <fullyQualifiedTypeName name="java.util.Calendar"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="com.spring.member.dao.MemberDAO"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="com.spring.ex01.MemberVO"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
@@ -19,4 +18,5 @@
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>

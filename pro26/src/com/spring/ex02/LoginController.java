@@ -67,8 +67,8 @@ public class LoginController {
 		// String userID = request.getParameter("userID");
 		// String userName = request.getParameter("userName");
 		
-		System.out.println("userID: "+userID);
-		System.out.println("userName: "+userName);
+		System.out.println("userID: "+ userID);
+		System.out.println("userName: "+ userName);
 		System.out.println("email: "+ email);
 		mav.addObject("userID", userID);
 		mav.addObject("userName", userName);
