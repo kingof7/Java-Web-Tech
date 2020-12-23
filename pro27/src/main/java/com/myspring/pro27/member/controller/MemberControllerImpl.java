@@ -5,6 +5,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,12 +28,17 @@ public class MemberControllerImpl extends MultiActionController implements Membe
 	//id가 memberVO인 빈을 memberVO에 주입
 	@Autowired
 	MemberVO memberVO;
+	private static final Logger logger = LoggerFactory.getLogger(MemberControllerImpl.class);
 	
 	@Override
 	@RequestMapping(value="/member/listMembers.do", method = RequestMethod.GET)
 	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
 		List membersList = memberService.listMembers();
+		
+		logger.info("viewName:" + viewName);
+		logger.debug("viewName:" + viewName);
+		
 		ModelAndView mav = new ModelAndView(viewName);
 		mav.addObject("membersList", membersList);
 		return mav;
