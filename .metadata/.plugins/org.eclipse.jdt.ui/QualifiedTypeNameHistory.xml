@@ -11,7 +11,6 @@
     <fullyQualifiedTypeName name="com.spring.member.dao.MemberDAO"/>
     <fullyQualifiedTypeName name="com.spring.ex01.MemberVO"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="org.springframework.dao.DataAccessException"/>
     <fullyQualifiedTypeName name="com.spring.member.vo.MemberVO"/>
     <fullyQualifiedTypeName name="java.util.List"/>
@@ -19,4 +18,9 @@
     <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+    <fullyQualifiedTypeName name="java.awt.Shape"/>
+    <fullyQualifiedTypeName name="java.awt.Rectangle"/>
 </qualifiedTypeNameHistroy>
